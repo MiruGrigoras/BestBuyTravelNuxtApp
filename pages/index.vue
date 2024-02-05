@@ -1,7 +1,7 @@
 <template>
   <a-layout style="height: 100vh">
-    <a-layout-header>
-      <img src="/img/sigla1-transparent.png" alt="logo" style="height: 100%" />
+    <a-layout-header style="padding: 0">
+      <nav-bar />
     </a-layout-header>
     <a-layout-content style="height: 100%">
       <a-row gutter="0" style="height: 100%">
@@ -65,16 +65,20 @@
         </a-col>
       </a-row>
     </a-layout-content>
-    <a-layout-footer>Footer</a-layout-footer>
+    <a-layout-footer style="padding: 0">
+      <Footer />
+    </a-layout-footer>
   </a-layout>
 </template>
 
 <script>
-import { LandingDecorativeText } from "#components";
+import { LandingDecorativeText, NavBar, Footer } from "#components";
 export default {
   name: "HelloWorld",
   components: {
     LandingDecorativeText,
+    NavBar,
+    Footer,
   },
 };
 </script>
