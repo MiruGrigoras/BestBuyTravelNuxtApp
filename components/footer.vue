@@ -6,8 +6,17 @@
       Telefon: +40 726 919 690 <br />
       © 2024 - Toate drepturile rezervate <br />
     </div>
+    <PdfViewer />
   </div>
 </template>
+<script>
+import PdfViewer from "./pdf-viewer.vue";
+export default {
+  components: {
+    PdfViewer,
+  },
+};
+</script>
 <style>
 .footer {
   color: white;
