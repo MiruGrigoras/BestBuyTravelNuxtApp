@@ -7,13 +7,16 @@
       © 2024 - Toate drepturile rezervate <br />
     </div>
     <PdfViewer />
+    <Contact />
   </div>
 </template>
 <script>
 import PdfViewer from "./pdf-viewer.vue";
+import Contact from "./contact.vue";
 export default {
   components: {
     PdfViewer,
+    Contact,
   },
 };
 </script>
