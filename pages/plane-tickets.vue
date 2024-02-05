@@ -4,10 +4,26 @@
       <nav-bar />
     </a-layout-header>
     <a-layout-content style="height: 100%">
-      <a-card style="width: 300px" v-for="card in cards" :key="card.id">
-        <a-card-meta :title="card.title" :description="card.description" />
-        <a-img :src="card.image" alt="Card Image" />
-      </a-card>
+      <div class="title">
+        C&#259;l&#259;tore&#351;te c&#259;tre urm&#259;toarea ta destina&#355;ie
+        de vis
+      </div>
+      <div class="cards-container">
+        <a-card
+          style="flex-grow: 1; margin: 0 10px"
+          v-for="card in cards"
+          :key="card.id"
+        >
+          <template #cover>
+            <img alt="example" :src="card.image" />
+          </template>
+          <a-card-meta
+            :title="card.title"
+            v-html="parsedDescription(card.description)"
+          />
+          <a-img :src="card.image" alt="Card Image" />
+        </a-card>
+      </div>
     </a-layout-content>
     <a-layout-footer style="padding: 0">
       <Footer />
@@ -22,24 +38,43 @@ export default {
       cards: [
         {
           id: 1,
-          title: "Card 1",
-          description: "Description for Card 1",
-          image: "https://example.com/card1.jpg",
+          title: "Paris",
+          description: "&#206;ncep&#226;nd de la 175 euro/persoan&#259;",
+          image: "/img/luvru-new.jpg",
         },
         {
           id: 2,
-          title: "Card 2",
-          description: "Description for Card 2",
-          image: "https://example.com/card2.jpg",
+          title: "Londra",
+          description: "&#206;ncep&#226;nd de la 160 euro/persoan&#259;",
+          image: "/img/london-new.jpg",
         },
         {
           id: 3,
-          title: "Card 3",
-          description: "Description for Card 3",
-          image: "https://example.com/card3.jpg",
+          title: "Madrid",
+          description: "&#206;ncep&#226;nd de la 175 euro/persoan&#259;",
+          image: "/img/madrid-new.jpg",
         },
       ],
     };
   },
+  methods: {
+    parsedDescription(description) {
+      return unescape(description);
+    },
+  },
 };
 </script>
+<style>
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+  color: #234589;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+</style>
