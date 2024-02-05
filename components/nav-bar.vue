@@ -1,9 +1,22 @@
 <template>
   <div class="nav-bar">
-    <img src="/img/sigla1-transparent.png" alt="logo" style="height: 100%" />
+    <img
+      src="/img/sigla1-transparent.png"
+      alt="logo"
+      style="height: 100%"
+      @click="redirectHome()"
+    />
   </div>
 </template>
-
+<script>
+export default {
+  methods: {
+    redirectHome() {
+      this.$router.push("/");
+    },
+  },
+};
+</script>
 <style>
 .nav-bar {
   display: flex;
@@ -13,5 +26,8 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+}
+img:hover {
+  cursor: pointer !important;
 }
 </style>
