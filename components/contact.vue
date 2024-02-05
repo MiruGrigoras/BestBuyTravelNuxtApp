@@ -1,8 +1,6 @@
 <template>
   <div>
-    <a-button type="primary" @click="showModal"
-      >Open Modal with customized footer</a-button
-    >
+    <a-button type="primary" @click="showModal">Conteaz&#259;-ne</a-button>
     <a-modal v-model:open="open" title="Title" @ok="handleOk">
       <template #footer>
         <a-button key="back" @click="handleCancel">Return</a-button>

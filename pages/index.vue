@@ -55,10 +55,10 @@
 
           <div class="under-underlay">
             <div class="underlay">
+              <LandingDecorativeText position="down" />
               <a-button>
                 <NuxtLink to="/plane-tickets">Plane Tickets</NuxtLink>
               </a-button>
-              <LandingDecorativeText position="down" />
             </div>
           </div>
           <div class="overlay"></div>

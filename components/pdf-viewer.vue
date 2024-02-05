@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-button type="primary" @click="showModal"
-      >Open Modal with customized footer</a-button
+      >Vizualizeaz&#259; documentele companiei</a-button
     >
     <a-modal v-model:open="open" @ok="handleOk" class="modal">
       <template #footer> </template>
