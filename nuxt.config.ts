@@ -6,5 +6,11 @@ export default defineNuxtConfig({
   modules: [
     '@ant-design-vue/nuxt'
   ],
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
 })
