@@ -96,27 +96,31 @@ export default {
     },
     handleSubmit() {
       const form = this.$refs.form as any;
-      form.validate().then((valid: boolean) => {
+      form.validate().then(async (valid: boolean) => {
         if (valid) {
           this.loading = true;
           console.log("Form:", this.formState);
 
-          this.sendEmail();
-          setTimeout(() => {
+          try {
+            const response = await fetch("/api/send-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(this.formState),
+            });
             this.loading = false;
             this.open = false;
-          }, 2000);
+          } catch (error) {
+            console.error("Failed to send email:", error);
+            // Handle error appropriately
+          } finally {
+            this.loading = false;
+          }
         }
       });
     },
-    sendEmail() {
-      // ($mail as any).send({
-      //   to: "miruna.grig@gmail.com",
-      //   from: this.formState.email,
-      //   subject: this.formState.title,
-      //   text: this.formState.message,
-      // });
-    },
+
     onFinishFailed(errorInfo: any) {
       console.log("Failed:", errorInfo);
     },
