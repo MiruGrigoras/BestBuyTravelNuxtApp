@@ -4,22 +4,18 @@
     <a-modal v-model:open="open" title="Scrie-ne">
       <template #footer>
         <a-button key="back" @click="handleCancel">Return</a-button>
-        <a-button
-          key="submit"
-          type="primary"
-          :loading="loading"
-          html-type="submit"
+        <a-button type="primary" :loading="loading" @click="handleSubmit"
           >Submit</a-button
         >
       </template>
       <a-form
+        ref="form"
         :model="formState"
         name="basic"
         layout="horizontal"
         :label-col="{ span: 4 }"
         :wrapper-col="{ span: 20 }"
         autocomplete="off"
-        @finish="onFinish"
         @finishFailed="onFinishFailed"
       >
         <a-form-item
@@ -30,7 +26,10 @@
               type: 'email',
               message: 'Adresa de e-mail nu are un format valid!',
             },
-            { required: true, message: 'Te rog introdu adresa de e-mail!' },
+            {
+              required: true,
+              message: 'Te rog introdu-&#355;i adresa de e-mail!',
+            },
           ]"
         >
           <a-input
@@ -73,11 +72,9 @@
   </div>
 </template>
 <script lang="ts">
-interface FormState {
-  email: string;
-  title: string;
-  message: string;
-}
+import type { FormState } from "~/types/formTypes";
+const { $mail } = useNuxtApp();
+
 export default {
   data() {
     return {
@@ -97,13 +94,28 @@ export default {
     handleCancel() {
       this.open = false;
     },
-    onFinish(values: FormState) {
-      console.log("Success:", values);
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-        this.open = false;
-      }, 2000);
+    handleSubmit() {
+      const form = this.$refs.form as any;
+      form.validate().then((valid: boolean) => {
+        if (valid) {
+          this.loading = true;
+          console.log("Form:", this.formState);
+
+          this.sendEmail();
+          setTimeout(() => {
+            this.loading = false;
+            this.open = false;
+          }, 2000);
+        }
+      });
+    },
+    sendEmail() {
+      // ($mail as any).send({
+      //   to: "miruna.grig@gmail.com",
+      //   from: this.formState.email,
+      //   subject: this.formState.title,
+      //   text: this.formState.message,
+      // });
     },
     onFinishFailed(errorInfo: any) {
       console.log("Failed:", errorInfo);
