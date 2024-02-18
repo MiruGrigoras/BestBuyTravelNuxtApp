@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-button type="primary" @click="showModal">Conteaz&#259;-ne</a-button>
-    <a-modal v-model:open="open" title="Scrie-ne">
+    <a-modal v-model:open="openDrawer" title="Scrie-ne">
       <template #footer>
         <a-button key="back" @click="handleCancel">Return</a-button>
         <a-button type="primary" :loading="loading" @click="handleSubmit"
@@ -73,9 +73,16 @@
 </template>
 <script lang="ts">
 import type { FormState } from "~/types/formTypes";
+import { useOpenDrawer } from "~/composables/states";
 const { $mail } = useNuxtApp();
-
 export default {
+  setup() {
+    const openDrawer = useOpenDrawer();
+
+    return {
+      openDrawer,
+    };
+  },
   data() {
     return {
       loading: false,
@@ -89,10 +96,10 @@ export default {
   },
   methods: {
     showModal() {
-      this.open = true;
+      this.openDrawer = true;
     },
     handleCancel() {
-      this.open = false;
+      this.openDrawer = false;
     },
     handleSubmit() {
       const form = this.$refs.form as any;
@@ -110,12 +117,11 @@ export default {
               body: JSON.stringify(this.formState),
             });
             this.loading = false;
-            this.open = false;
           } catch (error) {
             console.error("Failed to send email:", error);
             // Handle error appropriately
           } finally {
-            this.loading = false;
+            this.openDrawer = false;
           }
         }
       });
