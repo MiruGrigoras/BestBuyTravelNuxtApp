@@ -7,6 +7,7 @@
       © 2024 - Toate drepturile rezervate <br />
     </div>
     <PdfViewer />
+    <a-button type="primary" @click="showModal">Conteaz&#259;-ne</a-button>
     <Contact />
   </div>
 </template>
@@ -14,9 +15,20 @@
 import PdfViewer from "./pdf-viewer.vue";
 import Contact from "./contact.vue";
 export default {
+  setup() {
+    const openDrawer = useOpenDrawer();
+    return {
+      openDrawer,
+    };
+  },
   components: {
     PdfViewer,
     Contact,
+  },
+  methods: {
+    showModal() {
+      this.openDrawer = true;
+    },
   },
 };
 </script>

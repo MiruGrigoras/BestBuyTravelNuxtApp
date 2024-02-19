@@ -1,6 +1,5 @@
 <template>
   <div>
-    <a-button type="primary" @click="showModal">Conteaz&#259;-ne</a-button>
     <a-modal v-model:open="openDrawer" title="Scrie-ne">
       <template #footer>
         <a-button key="back" @click="handleCancel">Return</a-button>
@@ -73,7 +72,6 @@
 </template>
 <script lang="ts">
 import type { FormState } from "~/types/formTypes";
-import { useOpenDrawer } from "~/composables/states";
 const { $mail } = useNuxtApp();
 export default {
   setup() {
@@ -86,7 +84,6 @@ export default {
   data() {
     return {
       loading: false,
-      open: false,
       formState: {
         email: "",
         title: "",
@@ -95,9 +92,6 @@ export default {
     };
   },
   methods: {
-    showModal() {
-      this.openDrawer = true;
-    },
     handleCancel() {
       this.openDrawer = false;
     },
