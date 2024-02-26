@@ -12,14 +12,13 @@
           :key="card.id"
         >
           <template #cover>
-            <img alt="example" :src="card.image" />
+            <img alt="Card Image" :src="card.image" />
           </template>
           <a-card-meta :title="card.title" @click="showModal">
             <template #description>
               <div v-html="parsedDescription(card.description)"></div>
             </template>
           </a-card-meta>
-          <a-img :src="card.image" alt="Card Image" />
         </a-card>
       </div>
       <Contact />

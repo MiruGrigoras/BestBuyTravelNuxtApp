@@ -1,13 +1,24 @@
 <template>
   <div class="footer">
-    <div>
-      Agen&#355;ie de turism online <br />
-      Adresa: Intrarea T&#226;rgu Frumos nr. 7, sector 4 Bucure&#351;ti <br />
-      Telefon: +40 726 919 690 <br />
-      © 2024 - Toate drepturile rezervate <br />
-    </div>
-    <PdfViewer />
-    <a-button type="primary" @click="showModal">Conteaz&#259;-ne</a-button>
+    <a-row>
+      <a-col :span="8">
+        <div>© 2024 - Toate drepturile rezervate <br /></div>
+      </a-col>
+      <a-col :span="8">
+        <PdfViewer />
+        <a-button type="primary" @click="showModal">Conteaz&#259;-ne</a-button>
+      </a-col>
+      <a-col :span="8">
+        <a href="https://www.facebook.com/bestbuytravelromania" target="_blank">
+          <img
+            src="/img/Facebook_Logo_Secondary.png"
+            alt="Facebook"
+            style="height: 25px; width: 25px"
+          />
+        </a>
+      </a-col>
+    </a-row>
+
     <Contact />
   </div>
 </template>

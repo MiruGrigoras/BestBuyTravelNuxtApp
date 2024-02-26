@@ -4,7 +4,7 @@
       <nav-bar />
     </a-layout-header>
     <a-layout-content style="height: 100%">
-      <a-row gutter="0" style="height: 100%">
+      <a-row :gutter="0" style="height: 100%">
         <a-col :span="12" class="image-container" style="height: 100%">
           <a-carousel class="carousel" style="height: 100%" autoplay>
             <img
