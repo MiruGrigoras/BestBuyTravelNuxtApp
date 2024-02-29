@@ -3,7 +3,6 @@
 export default defineNuxtConfig({
   app: {
     baseURL: '/repository/', 
-    buildAssetsDir: '_nuxt',
   },
   devtools: { enabled: true },
   ssr: false,
