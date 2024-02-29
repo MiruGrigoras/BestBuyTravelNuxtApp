@@ -5,7 +5,15 @@
       'frame-container-down': position === 'down',
     }"
   >
-    <p class="frame-text">IMAGINE A PLACE WHERE YOU CAN BE YOURSELF.</p>
+    <p class="frame-text" v-if="purpose === 'accommodation'">
+      &#206;NCEPE FIECARE DIMINEA&#354;&#258; CU O PRIVELI&#350;TE CARE
+      &#206;&#354;I TAIE RESPIRA&#354;IA.
+    </p>
+
+    <p class="frame-text" v-else>
+      DESCOPER&#258; ZBORUL PERFECT CARE S&#258; TE POARTE SPRE AVENTURA
+      VISURILOR TALE.
+    </p>
   </div>
 </template>
 <script>
@@ -16,6 +24,13 @@ export default {
       default: "up",
       validator: function (value) {
         return ["up", "down"].includes(value);
+      },
+    },
+    purpose: {
+      type: String,
+      default: "accommodation",
+      validator: function (value) {
+        return ["accommodation", "flight"].includes(value);
       },
     },
   },

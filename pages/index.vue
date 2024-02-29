@@ -32,9 +32,11 @@
             </a-carousel>
             <div class="under-underlay">
               <div class="underlay">
-                <LandingDecorativeText position="up" />
+                <LandingDecorativeText position="up" purpose="accommodation" />
                 <a-button type="primary">
-                  <NuxtLink to="/accommodations">Caz&#259;ri</NuxtLink>
+                  <NuxtLink to="/accommodations"
+                    >Caut&#259; Caz&#259;ri</NuxtLink
+                  >
                 </a-button>
               </div>
             </div>
@@ -60,9 +62,11 @@
             </a-carousel>
             <div class="under-underlay">
               <div class="underlay">
-                <LandingDecorativeText position="down" />
+                <LandingDecorativeText position="down" purpose="flight" />
                 <a-button type="primary">
-                  <NuxtLink to="/plane-tickets">Bilete de avion</NuxtLink>
+                  <NuxtLink to="/plane-tickets"
+                    >Caut&#259; Bilete de Avion</NuxtLink
+                  >
                 </a-button>
               </div>
             </div>
