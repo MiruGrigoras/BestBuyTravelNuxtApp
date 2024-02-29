@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   app: {
-    baseURL: 'https://mirugrigoras.github.io/repository/', 
+    baseURL: '/repository/', 
   },
   devtools: { enabled: true },
   ssr: false,
