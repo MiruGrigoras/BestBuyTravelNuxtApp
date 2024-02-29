@@ -7,8 +7,8 @@
       <template #footer> </template>
       <embed
         src="/files/Documente_Best_Buy_Travel.pdf"
-        width="100%"
-        height="100%"
+        width="100% !important"
+        height="100% !important"
       />
     </a-modal>
   </div>
@@ -46,11 +46,11 @@ export default {
   top: 0 !important;
 }
 
-:where(.css-dev-only-do-not-override-19yxfbp).ant-modal .ant-modal-content,
-:where(.css-dev-only-do-not-override-19yxfbp).ant-modal .ant-modal-body {
-  height: 100%;
+.ant-modal .ant-modal-content,
+.ant-modal .ant-modal-body {
+  height: 100% !important;
 }
-:where(.css-dev-only-do-not-override-19yxfbp).ant-modal .ant-modal-content {
+.ant-modal .ant-modal-content {
   padding: 35px 35px;
 }
 </style>

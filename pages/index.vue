@@ -158,7 +158,7 @@ export default {
   width: auto !important;
 }
 
-:where(.css-dev-only-do-not-override-19yxfbp).ant-carousel .slick-slider {
+.ant-carousel .slick-slider {
   height: 100% !important;
 }
 </style>
