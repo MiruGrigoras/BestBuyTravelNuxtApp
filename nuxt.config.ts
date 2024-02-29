@@ -3,6 +3,7 @@
 export default defineNuxtConfig({
   app: {
     baseURL: '/mirugrigoras.github.io/repository/', 
+    buildAssetsDir: '_nuxt',
   },
   devtools: { enabled: true },
   ssr: false,
