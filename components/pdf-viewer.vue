@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-button type="primary" @click="showModal"
+    <a-button class="ghost-button" type="text" ghost @click="showModal"
       >Vizualizeaz&#259; documentele companiei</a-button
     >
     <a-modal v-model:open="open" @ok="handleOk" class="modal">
@@ -52,5 +52,13 @@ export default {
 }
 .ant-modal .ant-modal-content {
   padding: 35px 35px;
+}
+
+.ghost-button,
+.ghost-button:not(:disabled):hover {
+  color: #fff;
+}
+.ghost-button:not(:disabled):hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
 </style>
