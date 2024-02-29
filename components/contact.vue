@@ -13,10 +13,12 @@
       </template>
       <a-row>
         <a-col :span="8">
-          Agen&#355;ie de turism online <br />
-          Adresa: Intrarea T&#226;rgu Frumos nr. 7, sector 4 Bucure&#351;ti
-          <br />
-          Telefon: +40 726 919 690 <br />
+          <i><b>Agen&#355;ie de turism online</b></i> <br /><br />
+          <b>Adresa:</b> <br />
+          Intrarea T&#226;rgu Frumos nr. 7, sector 4 Bucure&#351;ti
+          <br /><br />
+          <b>Telefon:</b> <br />
+          +40 726 919 690 <br />
         </a-col>
         <a-col :span="1" style="display: flex; justify-content: center">
           <a-divider type="vertical" style="height: 100%" />
@@ -148,5 +150,8 @@ export default {
 .contact-modal {
   height: fit-content !important;
   width: 60% !important;
+}
+.contact-modal .ant-modal-title {
+  text-align: center;
 }
 </style>
