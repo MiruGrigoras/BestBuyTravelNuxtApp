@@ -3,11 +3,10 @@
 export default defineNuxtConfig({
   app: {
     baseURL: '/BestBuyTravelNuxtApp/', 
-    buildAssetsDir: '/BestBuyTravelNuxtApp/_nuxt/',
   },
-  vite: {
-    base: '/BestBuyTravelNuxtApp/',
-  },
+  // vite: {
+  //   base: '/BestBuyTravelNuxtApp/',
+  // },
   devtools: { enabled: true },
   ssr: false,
   modules: [
