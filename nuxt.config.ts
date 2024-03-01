@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/BestBuyTravelNuxtApp/', 
   },
+  vite: {
+    base: '/BestBuyTravelNuxtApp/',
+  },
   devtools: { enabled: true },
   ssr: false,
   modules: [
