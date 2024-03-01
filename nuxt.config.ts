@@ -2,13 +2,18 @@
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/BestBuyTravelNuxtApp/', 
+    baseURL: '/', 
   },
   // vite: {
   //   base: '/BestBuyTravelNuxtApp/',
   // },
+  generate:{
+    nojekyll: true, //not working on this version
+    fallback: '404.html',
+  },
   devtools: { enabled: true },
   ssr: false,
+  target: "static",
   modules: [
     '@ant-design-vue/nuxt'
   ],
