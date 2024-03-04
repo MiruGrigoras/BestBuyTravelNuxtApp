@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/BestBuyTravelNuxtApp/', 
+    baseURL: '/', 
   },
   devtools: { enabled: true },
   ssr: false,
